@@ -1,0 +1,29 @@
+<div id="main-content">
+	<div class="container">
+		<div class="row">
+
+		<div class="col-xs-8 col-xs-offset-2">
+			<input type="text" ng-model="nombre" placeholder="Producto"/>
+			<input type="number" ng-model="cantidad" placeholder="Cantidad"/>
+			<button type="button" class="btn btn-info" ng-click="agregar()">Agregar</button>
+		</div>
+			<div class="col-xs-8 col-xs-offset-2">
+				<table class="table table-striped">
+				    <thead>
+					  	<th>Producto</th>
+					  	<th>Cantidad</th>
+					  	<th>Comprado</th>
+				    </thead>
+				    <tbody>
+					    <tr dir-paginate="i in items | itemsPerPage:10">
+							<td>{{i.nombre}}</td>
+							<td>{{i.cantidad}}</td>
+							<td><input type="checkbox" ng-checked="i.comprado"></td>
+					    </tr>
+				    </tbody>
+			    </table>
+			</div>
+
+		</div>
+	</div>
+</div>
